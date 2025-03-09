@@ -21,14 +21,6 @@ struct BarChartView: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding()
             
-            // 選択されたチャートの説明
-            Text(selectedChartType.description)
-                .font(.caption)
-                .foregroundColor(.secondary)
-                .padding(.horizontal)
-                .padding(.bottom)
-                .multilineTextAlignment(.center)
-            
             Divider()
             
             // 選択されたチャートを表示
@@ -62,19 +54,6 @@ struct BarChartView: View {
             case .stacked: return "積み上げ"
             case .grouped: return "グループ"
             case .horizontal: return "横向き"
-            }
-        }
-        
-        var description: String {
-            switch self {
-            case .basic:
-                return "基本的な棒グラフ。データポイントをタップして詳細を表示できます。"
-            case .stacked:
-                return "積み上げ棒グラフ。複数の値を1つの棒に積み上げて表示します。"
-            case .grouped:
-                return "グループ化棒グラフ。カテゴリごとに複数のグループを並べて表示します。"
-            case .horizontal:
-                return "横向き棒グラフ。データを横方向に表示し、ソートやスタイル変更が可能です。"
             }
         }
     }
